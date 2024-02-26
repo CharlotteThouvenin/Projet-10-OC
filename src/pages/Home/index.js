@@ -67,7 +67,7 @@ const Page = () => {
       <section className="PeoplesContainer">
         <h2 className="Title" id="notre-equipe">Notre équipe</h2>
         <p>Une équipe d’experts dédiés à l’ogranisation de vos événements</p>
-        <div className="ListContainer">
+        <div className="ListContainer" data-testid="people-list">
           <PeopleCard
             imageSrc="/images/stephanie-liverani-Zz5LQe-VSMY-unsplash.png"
             name="Samira"
@@ -122,10 +122,10 @@ const Page = () => {
         </Modal>
       </div>
     </main>
-    <footer className="row">
-      <div className="col presta">
+    <footer className="row" data-testid="footer-testid">
+      <div className="col presta" data-testid="lastevent-testid">
         {lastEvent && (
-          <div className="col presta">
+          <div className="col presta" >
             <h3>Notre dernière prestation</h3>
             <EventCard
               imageSrc={lastEvent.cover}

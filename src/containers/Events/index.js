@@ -30,9 +30,8 @@ const EventList = () => {
     setCurrentPage(1);
     setType(evtType);
   };
-  console.log(filteredEvents.length)
+  
   const pageNumber = Math.ceil((filteredEventsType?.length || 0) / PER_PAGE); // ceil au lieu de floor pour arrondir entier au dessus
-  console.log(pageNumber)
   const typeList = new Set(data?.events.map((event) => event.type));
 
   return (
@@ -48,7 +47,7 @@ const EventList = () => {
             onChange={(value) => changeType(value)}
 
           />
-          <div id="events" className="ListContainer">
+          <div id="events" data-testid="events" className="ListContainer">
             {filteredEvents.map((event) => (
               <Modal key={event.id} Content={<ModalEvent event={event} />}>
                 {({ setIsOpened }) => (
